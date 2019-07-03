@@ -1,0 +1,42 @@
+--create database StockManagementSystem;
+--use StockManagementSystem;
+
+
+
+create table Category
+( ID int Identity(1,1) Primary key,
+Name varchar(100)
+
+)
+ Select * from Category;
+
+ create table Company
+ ( ID int Identity(1,1) primary key,
+ Name varchar(100)
+ );
+
+ create table Item 
+ ( ID int Identity(1,1) primary key,
+ Name varchar (100),
+ ReorderLevel int default 0 ,
+ CategoryID int Foreign key References Category(ID),
+ CompanyID int foreign key References Company(ID)
+
+ );
+ create table StockIn 
+ ( ID int Identity(1,1) primary key,
+   SiQuantity int ,
+   CreatedDate date default getdate(),
+   ItemID int foreign key References Item(ID)
+)
+
+create table StockOut
+ ( ID int Identity(1,1) primary key,
+   SoQuantity int ,
+   SoType int ,
+   CreatedDate date default getdate(),
+   ItemID int foreign key References Item(ID)
+)
+
+ 
+
