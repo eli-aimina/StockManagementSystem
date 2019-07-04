@@ -28,8 +28,8 @@
 
 #Ignore App config file 
 
-**/[Aa]pp.[Cc]onfig
-**/App*.config
+#**/[Aa]pp.[Cc]onfig
+#**/App*.config
 
 **/[Ww]eb*.[Cc]onfig
 
