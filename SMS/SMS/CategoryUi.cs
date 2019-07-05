@@ -12,7 +12,7 @@ using System.Windows.Forms;
 
 namespace SMS
 {
-    public partial class CategoryForm : Form
+    public partial class CategoryUi : Form
     {
        
 
@@ -21,7 +21,7 @@ namespace SMS
         private object displayDataGridView;
 
         int ID = 0;
-        public CategoryForm()
+        public CategoryUi()
         {
             InitializeComponent();
             category = new Category();

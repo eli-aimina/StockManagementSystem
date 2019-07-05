@@ -37,6 +37,20 @@ namespace SMS.Repository
             return isExecuted;
         }
 
+        public int InsertCompany(Company company)
+        {
+            commandString = @"INSERT INTO Company (Name) VALUES ('" + company.Name + "')";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
         public int CountCategoryByName(Category category)
         {
             commandString = @"SELECT count(*) from Category where Name='" + category.Name + "'";
@@ -51,6 +65,20 @@ namespace SMS.Repository
             return CategoryCount;
         }
 
+        public int CountCompanyByName(Company company)
+        {
+            commandString = @"SELECT count(*) from Company where Name='" + company.Name + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            int CompanyCount = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+            sqlConnection.Close();
+
+            return CompanyCount;
+        }
+
         public DataTable ShowCategory()
         {
             commandString = @"SELECT * FROM Category";
@@ -62,6 +90,23 @@ namespace SMS.Repository
             DataTable dataTable = new DataTable();
             sqlDataAdapter.Fill(dataTable);
             
+            sqlConnection.Close();
+
+            return dataTable;
+
+        }
+
+        public DataTable ShowCompany()
+        {
+            commandString = @"SELECT * FROM Company";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
             sqlConnection.Close();
 
             return dataTable;
@@ -83,9 +128,39 @@ namespace SMS.Repository
             return isExecuted;
         }
 
+        public int EditCompany(Company company)
+        {
+            commandString = @"UPDATE Company SET Name='" + company.Name + "' WHERE ID='" + company.ID + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
         public int DeleteCategory(Category category)
         {
             commandString = @"DELETE FROM Category WHERE ID='" + category.ID + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
+        public int DeleteCompany(Company company)
+        {
+            commandString = @"DELETE FROM Company WHERE ID='" + company.ID + "'";
             sqlCommand = new SqlCommand(commandString, sqlConnection);
 
             sqlConnection.Open();

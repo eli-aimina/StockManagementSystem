@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class CategoryForm
+    partial class CategoryUi
     {
         /// <summary>
         /// Required designer variable.
@@ -29,28 +29,28 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            this.t = new System.Windows.Forms.Label();
+            this.categoryNameLebel = new System.Windows.Forms.Label();
             this.categoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.categoryDataGridView = new System.Windows.Forms.DataGridView();
             this.CategoryEditButton = new System.Windows.Forms.Button();
             this.CategoryDeleteButton = new System.Windows.Forms.Button();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.CategorySL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
-            // t
+            // categoryNameLebel
             // 
-            this.t.AutoSize = true;
-            this.t.Location = new System.Drawing.Point(39, 25);
-            this.t.Name = "t";
-            this.t.Size = new System.Drawing.Size(35, 13);
-            this.t.TabIndex = 0;
-            this.t.Text = "Name";
+            this.categoryNameLebel.AutoSize = true;
+            this.categoryNameLebel.Location = new System.Drawing.Point(39, 25);
+            this.categoryNameLebel.Name = "categoryNameLebel";
+            this.categoryNameLebel.Size = new System.Drawing.Size(35, 13);
+            this.categoryNameLebel.TabIndex = 0;
+            this.categoryNameLebel.Text = "Name";
             // 
             // categoryNameTextBox
             // 
@@ -106,10 +106,6 @@
             this.CategoryDeleteButton.UseVisualStyleBackColor = true;
             this.CategoryDeleteButton.Click += new System.EventHandler(this.CategoryDeleteButton_Click);
             // 
-            // categoryBindingSource
-            // 
-            this.categoryBindingSource.DataSource = typeof(SMS.Models.Category);
-            // 
             // CategorySL
             // 
             this.CategorySL.HeaderText = "SL";
@@ -128,6 +124,10 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(SMS.Models.Category);
+            // 
             // CategoryForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -138,7 +138,7 @@
             this.Controls.Add(this.categoryDataGridView);
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.categoryNameTextBox);
-            this.Controls.Add(this.t);
+            this.Controls.Add(this.categoryNameLebel);
             this.Name = "CategoryForm";
             this.Text = "Category Form";
             this.Load += new System.EventHandler(this.CategoryForm_Load);
@@ -151,7 +151,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Label t;
+        private System.Windows.Forms.Label categoryNameLebel;
         private System.Windows.Forms.TextBox categoryNameTextBox;
         private System.Windows.Forms.Button SaveButton;
         private System.Windows.Forms.DataGridView categoryDataGridView;

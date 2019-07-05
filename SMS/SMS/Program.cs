@@ -16,7 +16,10 @@ namespace SMS
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new CategoryForm());
+            //Application.Run(new CategoryForm());
+            //Application.Run(new ItemUi());
+            Application.Run(new CompanyUi());
+
         }
     }
 }
