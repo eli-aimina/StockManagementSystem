@@ -14,14 +14,14 @@ using SMS.Bll;
 
 namespace SMS
 {
-    public partial class CategoryForm : Form
+    public partial class CompanyForm : Form
     {
 
 
-        CategorySetupManager _categorySetupManager = new CategorySetupManager();
-        Category category= new Category();
+        CompanySetupManager _categorySetupManager = new CompanySetupManager();
+        Company category= new Company();
         
-        public CategoryForm()
+        public CompanyForm()
         {
             InitializeComponent();
            
@@ -31,11 +31,11 @@ namespace SMS
         private void SaveButton_Click(object sender, EventArgs e)
         {
             
-           category.Name = categoryNameTextBox.Text;
+           category.Name = companyNameTextBox.Text;
 
             _categorySetupManager.SaveCategory(category);
 
-            displayCategoryDataGridView.DataSource = _categorySetupManager.ShowCategory();
+            displayCompanyDataGridView.DataSource = _categorySetupManager.ShowCategory();
 
         }
 

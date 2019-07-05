@@ -9,11 +9,11 @@ using SMS.Models;
 
 namespace SMS.Bll
 {
-    public class CategorySetupManager
+    public class CompanySetupManager
     {
-        CategoryRepository _categorySetup = new CategoryRepository();
+        CompanyRepository _categorySetup = new CompanyRepository();
 
-        public void SaveCategory(Category category)
+        public void SaveCategory(Company category)
         {
             _categorySetup.SaveCategory(category);
         }

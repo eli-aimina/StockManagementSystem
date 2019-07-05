@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace SMS.Models
 {
-    public class Category
+    public class Company
     {
         public int ID { set; get; }
         
