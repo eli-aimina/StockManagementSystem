@@ -27,16 +27,28 @@ namespace SMS.Repository
         {
             commandString = @"INSERT INTO Category (Name) VALUES ('" + category.Name + "')";
             sqlCommand = new SqlCommand(commandString, sqlConnection);
-
+            
             sqlConnection.Open();
             int isExecuted;
             isExecuted = sqlCommand.ExecuteNonQuery();
 
-
-
             sqlConnection.Close();
 
             return isExecuted;
+        }
+
+        public int CountCategoryByName(Category category)
+        {
+            commandString = @"SELECT count(*) from Category where Name='" + category.Name + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            int CategoryCount = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+            sqlConnection.Close();
+
+            return CategoryCount;
         }
 
         public DataTable ShowCategory()
@@ -56,6 +68,34 @@ namespace SMS.Repository
 
         }
 
+        public int EditCategory(Category category)
+        {
+            commandString = @"UPDATE Category SET Name='"+category.Name+"' WHERE ID='"+category.ID+"'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
 
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+            
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
+        public int DeleteCategory(Category category)
+        {
+            commandString = @"DELETE FROM Category WHERE ID='" + category.ID + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
     }
 }

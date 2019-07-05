@@ -18,9 +18,24 @@ namespace SMS.BLL
             return _smsRepository.InsertCategory(category);
         }
 
+        public int CountCategoryByName(Category category)
+        {
+            return _smsRepository.CountCategoryByName(category);
+        }
+
         public DataTable ShowCategory()
         {
             return _smsRepository.ShowCategory();
+        }
+
+        public int EditCategory(Category category)
+        {
+            return _smsRepository.EditCategory(category);
+        }
+
+        public int DeleteCategory(Category category)
+        {
+            return _smsRepository.DeleteCategory(category);
         }
     }
 }
