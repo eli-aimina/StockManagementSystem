@@ -50,6 +50,8 @@ namespace SMS.Repository
 
             return isExecuted;
         }
+        
+        
 
         public int CountCategoryByName(Category category)
         {
@@ -161,6 +163,81 @@ namespace SMS.Repository
         public int DeleteCompany(Company company)
         {
             commandString = @"DELETE FROM Company WHERE ID='" + company.ID + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
+        public int InsertItem(StockItem item)
+        {
+            commandString = @"INSERT INTO Item (Name, ReorderLevel, CategoryID, CompanyID ) VALUES ('" + item.Name + "','" + item.ReorderLevel + "','" + item.CategoryID + "','" + item.CompanyID + "')";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
+        public int CountItemByName(StockItem item)
+        {
+            commandString = @"SELECT count(*) from Item where Name='" + item.Name + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            int CompanyCount = Convert.ToInt32(sqlCommand.ExecuteScalar());
+
+            sqlConnection.Close();
+
+            return CompanyCount;
+        }
+
+        public DataTable ShowItem()
+        {
+            commandString = @"SELECT * FROM ItemView";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            sqlConnection.Close();
+
+            return dataTable;
+
+        }
+
+        public int EditItem(StockItem item)
+        {
+            commandString = @"UPDATE Category SET Name='" + item.Name + "' WHERE ID='" + item.ID + "'";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+            int isExecuted;
+            isExecuted = sqlCommand.ExecuteNonQuery();
+
+
+            sqlConnection.Close();
+
+            return isExecuted;
+        }
+
+        public int DeleteItem(StockItem item)
+        {
+            commandString = @"DELETE FROM Item WHERE ID='" + item.ID + "'";
             sqlCommand = new SqlCommand(commandString, sqlConnection);
 
             sqlConnection.Open();

@@ -18,7 +18,8 @@ namespace SMS
             Application.SetCompatibleTextRenderingDefault(false);
             //Application.Run(new CategoryForm());
             //Application.Run(new ItemUi());
-            Application.Run(new CompanyUi());
+            //Application.Run(new CompanyUi());
+            Application.Run(new ItemUi());
 
         }
     }
