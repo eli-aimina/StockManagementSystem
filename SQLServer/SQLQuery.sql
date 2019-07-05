@@ -38,5 +38,15 @@ create table StockOut
    ItemID int foreign key References Item(ID)
 )
 
+select * from Category order by id desc;
 UPDATE Category set Name='Notebook' where ID=2;
 DELETE FROM Category WHERE ID=4;
+
+SELECT count(*) from Category where Name='Mobile kk'
+
+Insert into Company (Name) values('Huwei')  
+Insert into Company (Name) values('Lenovo')  
+Insert into Company (Name) values('Nokia')  
+Insert into Company (Name) values('Samsung')  
+
+select * from Company
