@@ -62,6 +62,12 @@
     <Compile Include="CompanyUi.Designer.cs">
       <DependentUpon>CompanyUi.cs</DependentUpon>
     </Compile>
+    <Compile Include="HomeUI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="HomeUI.Designer.cs">
+      <DependentUpon>HomeUI.cs</DependentUpon>
+    </Compile>
     <Compile Include="ItemUi.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +110,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="CompanyUi.resx">
       <DependentUpon>CompanyUi.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="HomeUI.resx">
+      <DependentUpon>HomeUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="ItemUi.resx">
       <DependentUpon>ItemUi.cs</DependentUpon>

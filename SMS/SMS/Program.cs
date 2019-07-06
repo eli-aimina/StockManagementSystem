@@ -20,7 +20,8 @@ namespace SMS
             //Application.Run(new ItemUi());
             //Application.Run(new CompanyUi());
             //Application.Run(new ViewUi());
-            Application.Run(new SearchUI());
+            //Application.Run(new SearchUI());
+            Application.Run(new HomeUI());
 
         }
     }
