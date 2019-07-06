@@ -25,7 +25,7 @@ namespace SMS
             String FromDate = FromDateTimePicker.Text;
             String ToDate = ToDateTimePicker.Text;
 
-            String SoType = "Sold";
+            String SoType = "";
             if (SoldRadioButton.Checked == true)
             {
                 SoType = "Sold";
@@ -38,6 +38,7 @@ namespace SMS
             {
                 SoType = "Lost";
             }
+            //MessageBox.Show(SoType);
 
             viewDataGridView.DataSource = _stockOutManager.SearchStockOut(SoType, FromDate, ToDate);
         }

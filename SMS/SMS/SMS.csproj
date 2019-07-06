@@ -75,11 +75,11 @@
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Repository\SmsRepository.cs" />
-    <Compile Include="SearchUi.cs">
+    <Compile Include="SearchUI.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="SearchUi.Designer.cs">
-      <DependentUpon>SearchUi.cs</DependentUpon>
+    <Compile Include="SearchUI.Designer.cs">
+      <DependentUpon>SearchUI.cs</DependentUpon>
     </Compile>
     <Compile Include="StockInUi.cs">
       <SubType>Form</SubType>
@@ -117,8 +117,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="SearchUi.resx">
-      <DependentUpon>SearchUi.cs</DependentUpon>
+    <EmbeddedResource Include="SearchUI.resx">
+      <DependentUpon>SearchUI.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="StockInUi.resx">
       <DependentUpon>StockInUi.cs</DependentUpon>

@@ -1,6 +1,6 @@
 ﻿namespace SMS
 {
-    partial class Search_and_view_item_summary
+    partial class SearchUI
     {
         /// <summary>
         /// Required designer variable.
@@ -28,13 +28,18 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.searchCompanyLebel = new System.Windows.Forms.Label();
             this.searchCategoryLebel = new System.Windows.Forms.Label();
             this.searchCompanyComboBox = new System.Windows.Forms.ComboBox();
             this.searchCategoryComboBox = new System.Windows.Forms.ComboBox();
             this.SearchButton = new System.Windows.Forms.Button();
             this.searchDataGridView = new System.Windows.Forms.DataGridView();
+            this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // searchCompanyLebel
@@ -57,19 +62,25 @@
             // 
             // searchCompanyComboBox
             // 
+            this.searchCompanyComboBox.DataSource = this.companyBindingSource;
+            this.searchCompanyComboBox.DisplayMember = "Name";
             this.searchCompanyComboBox.FormattingEnabled = true;
             this.searchCompanyComboBox.Location = new System.Drawing.Point(257, 22);
             this.searchCompanyComboBox.Name = "searchCompanyComboBox";
             this.searchCompanyComboBox.Size = new System.Drawing.Size(158, 21);
             this.searchCompanyComboBox.TabIndex = 1;
+            this.searchCompanyComboBox.ValueMember = "ID";
             // 
             // searchCategoryComboBox
             // 
+            this.searchCategoryComboBox.DataSource = this.categoryBindingSource;
+            this.searchCategoryComboBox.DisplayMember = "Name";
             this.searchCategoryComboBox.FormattingEnabled = true;
             this.searchCategoryComboBox.Location = new System.Drawing.Point(257, 55);
             this.searchCategoryComboBox.Name = "searchCategoryComboBox";
             this.searchCategoryComboBox.Size = new System.Drawing.Size(158, 21);
             this.searchCategoryComboBox.TabIndex = 1;
+            this.searchCategoryComboBox.ValueMember = "ID";
             // 
             // SearchButton
             // 
@@ -79,6 +90,7 @@
             this.SearchButton.TabIndex = 2;
             this.SearchButton.Text = "Search";
             this.SearchButton.UseVisualStyleBackColor = true;
+            this.SearchButton.Click += new System.EventHandler(this.SearchButton_Click);
             // 
             // searchDataGridView
             // 
@@ -87,6 +99,14 @@
             this.searchDataGridView.Name = "searchDataGridView";
             this.searchDataGridView.Size = new System.Drawing.Size(617, 168);
             this.searchDataGridView.TabIndex = 3;
+            // 
+            // companyBindingSource
+            // 
+            this.companyBindingSource.DataSource = typeof(SMS.Models.Company);
+            // 
+            // categoryBindingSource
+            // 
+            this.categoryBindingSource.DataSource = typeof(SMS.Models.Category);
             // 
             // Search_and_view_item_summary
             // 
@@ -101,8 +121,10 @@
             this.Controls.Add(this.searchCompanyLebel);
             this.Name = "Search_and_view_item_summary";
             this.Text = "Search and view Item summary";
-            this.Load += new System.EventHandler(this.Search_and_view_item_summary_Load);
+            this.Load += new System.EventHandler(this.SearchUI_Load);
             ((System.ComponentModel.ISupportInitialize)(this.searchDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -116,5 +138,7 @@
         private System.Windows.Forms.ComboBox searchCategoryComboBox;
         private System.Windows.Forms.Button SearchButton;
         private System.Windows.Forms.DataGridView searchDataGridView;
+        private System.Windows.Forms.BindingSource companyBindingSource;
+        private System.Windows.Forms.BindingSource categoryBindingSource;
     }
 }

@@ -37,5 +37,11 @@ namespace SMS.BLL
         {
             return _smsRepository.DeleteItem(item);
         }
+
+        //6.Search & View Items Summary 
+        public DataTable SearchItemSummary(int CompanyID, int CategoryID)
+        {
+            return _smsRepository.SearchItemSummary(CompanyID, CategoryID);
+        }
     }
 }

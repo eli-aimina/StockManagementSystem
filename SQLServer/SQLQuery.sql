@@ -88,11 +88,36 @@ select * from StockOutView
 select Item, Company, SoQuantity from StockOutView where SoType='Sold' AND CreatedDate BETWEEN  '2019-07-04' AND '2019-07-06'
 
 
+insert into StockIn (SiQuantity, CreatedDate, ItemID) values(60, '2019-07-03', 1)
+insert into StockIn (SiQuantity, CreatedDate, ItemID) values(20, '2019-07-04', 2)
+insert into StockIn (SiQuantity, CreatedDate, ItemID) values(30, '2019-07-04', 2)
+insert into StockIn (SiQuantity, CreatedDate, ItemID) values(40, '2019-07-05', 1)
 
 
+select * from StockIn
+select * from StockOut;
 
 
+select (select SUM(SiQuantity) from StockIn where ItemID=1) - (select SUM(SoQuantity) from StockOut where ItemID=1)
 
+------------------------------------------------
+alter view ItemSummaryView AS
+select 
+i.ID as ItemID,
+i.Name as Item, 
+co.ID as CompanyID,
+co.Name as Company,
+c.ID as CategoryID, 
+c.Name as Category, 
+( (select SUM(SiQuantity) from StockIn where ItemID=i.ID) - (select SUM(SoQuantity) from StockOut where ItemID=i.ID) ) AS AvailableQty,
+i.ReorderLevel 
+from Item i
+join Category c ON c.ID = i.CategoryID
+join Company co ON co.id=i.CompanyID
+
+-------------------------------
+
+select * from ItemSummaryView where CompanyID=1 AND CategoryID=1
 
 
 

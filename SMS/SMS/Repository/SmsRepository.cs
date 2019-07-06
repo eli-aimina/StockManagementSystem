@@ -266,5 +266,23 @@ namespace SMS.Repository
             return dataTable;
 
         }
+
+        //6.Search & View Items Summary 
+        public DataTable SearchItemSummary(int CompanyID, int CategoryID)
+        {
+            commandString = @"select Item, Company, Category, AvailableQty, ReorderLevel from ItemSummaryView where CompanyID="+CompanyID+" AND CategoryID="+CategoryID+"";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            sqlConnection.Close();
+
+            return dataTable;
+
+        }
     }
 }
