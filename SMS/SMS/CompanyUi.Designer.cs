@@ -35,14 +35,14 @@
             this.CompanyEditButton = new System.Windows.Forms.Button();
             this.CompanyDeleteButton = new System.Windows.Forms.Button();
             this.companyDataGridView = new System.Windows.Forms.DataGridView();
-            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.SL_column = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.companyBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // companyNameLabel
@@ -141,11 +141,11 @@
             this.Controls.Add(this.companyNameTextBox);
             this.Controls.Add(this.companyNameLabel);
             this.Name = "CompanyUi";
-            this.Text = "CompanuUi";
+            this.Text = "Company setup";
             this.Load += new System.EventHandler(this.CompanyUi_Load);
             ((System.ComponentModel.ISupportInitialize)(this.companyDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.companyBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

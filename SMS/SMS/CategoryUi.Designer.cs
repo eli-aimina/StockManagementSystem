@@ -33,12 +33,12 @@
             this.categoryNameTextBox = new System.Windows.Forms.TextBox();
             this.SaveButton = new System.Windows.Forms.Button();
             this.categoryDataGridView = new System.Windows.Forms.DataGridView();
-            this.CategoryEditButton = new System.Windows.Forms.Button();
-            this.CategoryDeleteButton = new System.Windows.Forms.Button();
             this.CategorySL = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.iDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.categoryBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.CategoryEditButton = new System.Windows.Forms.Button();
+            this.CategoryDeleteButton = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -86,26 +86,6 @@
             this.categoryDataGridView.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.categoryDataGridView_RowPostPaint);
             this.categoryDataGridView.Paint += new System.Windows.Forms.PaintEventHandler(this.categoryDataGridView_Paint);
             // 
-            // CategoryEditButton
-            // 
-            this.CategoryEditButton.Location = new System.Drawing.Point(188, 62);
-            this.CategoryEditButton.Name = "CategoryEditButton";
-            this.CategoryEditButton.Size = new System.Drawing.Size(75, 23);
-            this.CategoryEditButton.TabIndex = 4;
-            this.CategoryEditButton.Text = "Edit";
-            this.CategoryEditButton.UseVisualStyleBackColor = true;
-            this.CategoryEditButton.Click += new System.EventHandler(this.CategoryEditButton_Click);
-            // 
-            // CategoryDeleteButton
-            // 
-            this.CategoryDeleteButton.Location = new System.Drawing.Point(272, 62);
-            this.CategoryDeleteButton.Name = "CategoryDeleteButton";
-            this.CategoryDeleteButton.Size = new System.Drawing.Size(75, 23);
-            this.CategoryDeleteButton.TabIndex = 5;
-            this.CategoryDeleteButton.Text = "Delete";
-            this.CategoryDeleteButton.UseVisualStyleBackColor = true;
-            this.CategoryDeleteButton.Click += new System.EventHandler(this.CategoryDeleteButton_Click);
-            // 
             // CategorySL
             // 
             this.CategorySL.HeaderText = "SL";
@@ -128,7 +108,27 @@
             // 
             this.categoryBindingSource.DataSource = typeof(SMS.Models.Category);
             // 
-            // CategoryForm
+            // CategoryEditButton
+            // 
+            this.CategoryEditButton.Location = new System.Drawing.Point(188, 62);
+            this.CategoryEditButton.Name = "CategoryEditButton";
+            this.CategoryEditButton.Size = new System.Drawing.Size(75, 23);
+            this.CategoryEditButton.TabIndex = 4;
+            this.CategoryEditButton.Text = "Edit";
+            this.CategoryEditButton.UseVisualStyleBackColor = true;
+            this.CategoryEditButton.Click += new System.EventHandler(this.CategoryEditButton_Click);
+            // 
+            // CategoryDeleteButton
+            // 
+            this.CategoryDeleteButton.Location = new System.Drawing.Point(272, 62);
+            this.CategoryDeleteButton.Name = "CategoryDeleteButton";
+            this.CategoryDeleteButton.Size = new System.Drawing.Size(75, 23);
+            this.CategoryDeleteButton.TabIndex = 5;
+            this.CategoryDeleteButton.Text = "Delete";
+            this.CategoryDeleteButton.UseVisualStyleBackColor = true;
+            this.CategoryDeleteButton.Click += new System.EventHandler(this.CategoryDeleteButton_Click);
+            // 
+            // CategoryUi
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -139,8 +139,8 @@
             this.Controls.Add(this.SaveButton);
             this.Controls.Add(this.categoryNameTextBox);
             this.Controls.Add(this.categoryNameLebel);
-            this.Name = "CategoryForm";
-            this.Text = "Category Form";
+            this.Name = "CategoryUi";
+            this.Text = "Category setup";
             this.Load += new System.EventHandler(this.CategoryForm_Load);
             ((System.ComponentModel.ISupportInitialize)(this.categoryDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.categoryBindingSource)).EndInit();

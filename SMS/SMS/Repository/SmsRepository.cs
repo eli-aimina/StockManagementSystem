@@ -249,5 +249,22 @@ namespace SMS.Repository
 
             return isExecuted;
         }
+
+        public DataTable SearchStockOut(String SoType, String FromDate, String ToDate)
+        {
+            commandString = @"select Item, Company, SoQuantity as 'Sold/Damage/Lost' from StockOutView where SoType='"+SoType+ "' AND CreatedDate BETWEEN  '"+ Convert.ToDateTime(FromDate) + "'  AND '" + Convert.ToDateTime(ToDate) + "' ";
+            sqlCommand = new SqlCommand(commandString, sqlConnection);
+
+            sqlConnection.Open();
+
+            SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(sqlCommand);
+            DataTable dataTable = new DataTable();
+            sqlDataAdapter.Fill(dataTable);
+
+            sqlConnection.Close();
+
+            return dataTable;
+
+        }
     }
 }
